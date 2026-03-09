@@ -1,154 +1,255 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Joshua Etim | Software Developer</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="Joshua Etim — Creative Developer building digital luxury experiences"/>
+<title>Joshua Etim | Creative Developer</title>
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+theme: {
+extend: {
+colors: {
+obsidian: '#0a0a0a', charcoal: '#111111', 'off-white': '#f5f5f5',
+'muted-grey': '#a1a1a1', gold: '#d4af37', bronze: '#cd7f32'
+},
+fontFamily: { serif: ['Playfair Display', 'serif'], sans: ['Manrope', 'Inter', 'sans-serif'] },
+animation: { 'marquee': 'marquee 25s linear infinite', 'float': 'float 6s ease-in-out infinite' },
+keyframes: {
+marquee: { '0%': { transform: 'translateX(0)' }, '100%': { transform: 'translateX(-50%)' } },
+float: { '0%, 100%': { transform: 'translateY(0)' }, '50%': { transform: 'translateY(-20px)' } }
+}
+}
+}
+}
+</script>
+<!-- External Styles -->
+<link rel="stylesheet" href="styles.css">
 </head>
-<body class="bg-gray-50">
-    <div class="max-w-6xl mx-auto px-4 py-12">
-        <!-- Welcome Banner -->
-        <section class="mb-16 text-center">
-            <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">👋 Hey there, I'm Joshua Etim!</h1>
-            <p class="text-xl text-gray-600 mb-6">🚀 Software Developer | Automation</p>
-            <div class="max-w-2xl mx-auto border-t border-b border-gray-200 py-4">
-                <p class="text-gray-700">📍 Remote • Available for freelance & collaborations</p>
-            </div>
-        </section>
+<body class="antialiased">
+<div class="grain-overlay"></div><div class="cursor" id="cursor"></div><div class="cursor-dot" id="cursor-dot"></div>
+<div class="preloader" id="preloader"><div class="preloader-text"><span>J</span><span>o</span><span>s</span><span>h</span><span>u</span><span>a</span><span style="margin: 0 1vw;">•</span><span>E</span><span>t</span><span>i</span><span>m</span></div></div>
+<main data-scroll-container>
+<!-- Navigation -->
+<nav class="fixed top-0 left-0 right-0 z-50 px-6 py-4 flex justify-between items-center backdrop-blur-sm bg-obsidian/80">
+<a href="#" class="text-2xl font-serif tracking-widest hover-trigger" aria-label="Home">JE.</a>
+<div class="nav-desktop flex gap-8">
+<a href="#work" class="nav-link text-sm uppercase tracking-widest hover-trigger">Work</a>
+<a href="#experience" class="nav-link text-sm uppercase tracking-widest hover-trigger">Experience</a>
+<a href="#skills" class="nav-link text-sm uppercase tracking-widest hover-trigger">Skills</a>
+<a href="#contact" class="nav-link text-sm uppercase tracking-widest hover-trigger">Contact</a>
+</div>
+<button class="nav-mobile p-2 hover-trigger" id="menuToggle" aria-label="Toggle menu">
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+</button>
+</nav>
+<!-- Mobile Menu -->
+<div id="mobileMenu" class="fixed inset-0 z-40 bg-obsidian flex flex-col items-center justify-center gap-8 transform translate-x-full transition-transform duration-500">
+<button id="menuClose" class="absolute top-6 right-6 p-2 hover-trigger" aria-label="Close menu">
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+</button>
+<a href="#work" class="text-3xl font-serif hover-trigger mobile-link">Work</a>
+<a href="#experience" class="text-3xl font-serif hover-trigger mobile-link">Experience</a>
+<a href="#skills" class="text-3xl font-serif hover-trigger mobile-link">Skills</a>
+<a href="#contact" class="text-3xl font-serif hover-trigger mobile-link">Contact</a>
+</div>
+<!-- Hero -->
+<section class="hero" id="hero">
+<div class="relative z-10 max-w-7xl mx-auto w-full">
+<div class="relative z-10 max-w-7xl mx-auto w-full">
+<p class="text-muted-grey uppercase tracking-widest text-sm mb-4 fade-in">Creative Developer</p>
+<h1 class="display-text mb-6 fade-up">Joshua Etim</h1>
+<p class="text-xl md:text-2xl text-muted-grey max-w-3xl fade-up" style="transition-delay: 0.2s">
+Building digital luxury experiences where craftsmanship meets cutting-edge technology.
+</p>
+<div class="quote-block fade-up" style="transition-delay: 0.4s">
+Make it work, make it right, make it fast.
+<span class="quote-author">— Kent Beck</span>
+</div>
+</div>
+</div>
+<a href="#work" class="scroll-indicator hover-trigger" aria-label="Scroll to content"><span>Explore</span><div class="scroll-line"></div></a>
+</section>
+<!-- Featured Projects -->
+<section id="work" class="py-32 px-6 bg-charcoal/30">
+<div class="max-w-7xl mx-auto">
+<h2 class="section-title fade-up">Featured Projects</h2>
+<p class="text-muted-grey mb-12 fade-up">A curated selection of my work across education, fintech, travel, and sustainability.</p>
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-16">
+<!-- Lena - HackNG -->
+<a href="lena.html" class="project-card group fade-up hover-trigger">
+<img src="https://joshuaetim.github.io/images/thumbnails/lena.avif" alt="Lena Platform" class="project-image" />
+<div class="project-overlay">
+<h3 class="project-title font-serif">Lena</h3>
+<p class="project-desc">Educational software reshaping learning & teaching in Nigeria</p>
+<div class="project-tags"><span class="project-tag">Python</span><span class="project-tag">Postgres</span><span class="project-tag">Golang</span></div>
+</div>
+</a>
+<!-- Circula - CirculaHQ -->
+<a href="circula.html" class="project-card group fade-up hover-trigger">
+<img src="https://joshuaetim.github.io/images/thumbnails/circula.png" alt="Circula Platform" class="project-image" />
+<div class="project-overlay">
+<h3 class="project-title font-serif">Circula</h3>
+<p class="project-desc">Inventory management enabling a cleaner world through recycling</p>
+<div class="project-tags"><span class="project-tag">Golang</span><span class="project-tag">Python</span><span class="project-tag">Postgres</span></div>
+</div>
+</a>
+<!-- Reccur Payment -->
+<a href="reccur.html" class="project-card group fade-up hover-trigger">
+<img src="https://joshuaetim.github.io/images/thumbnails/reccur.png" alt="Reccur Payment" class="project-image" />
+<div class="project-overlay">
+<h3 class="project-title font-serif">Reccur Payment</h3>
+<p class="project-desc">Payment & payroll management system with robust database architecture</p>
+<div class="project-tags"><span class="project-tag">Postgres</span><span class="project-tag">Python</span><span class="project-tag">JS</span></div>
+</div>
+</a>
+<!-- AirGateway -->
+<a href="airgateway.html" class="project-card group fade-up hover-trigger">
+<img src="https://joshuaetim.github.io/images/thumbnails/airgateway.png" alt="AirGateway" class="project-image" />
+<div class="project-overlay">
+<h3 class="project-title font-serif">AirGateway</h3>
+<p class="project-desc">Flight booking management with integrated APIs ✈️</p>
+<div class="project-tags"><span class="project-tag">Golang</span><span class="project-tag">APIs</span><span class="project-tag">Python</span></div>
+</div>
+</a>
+<!-- Booking Ninjas -->
+<a href="bookingninjas.html" class="project-card group fade-up hover-trigger">
+<img src="https://joshuaetim.github.io/images/thumbnails/bookingninjas.png" alt="Booking Ninjas" class="project-image" />
+<div class="project-overlay">
+<h3 class="project-title font-serif">Booking Ninjas</h3>
+<p class="project-desc">Property management with Salesforce & AI/ML integration 🧙‍♂️</p>
+<div class="project-tags"><span class="project-tag">Golang</span><span class="project-tag">AI/ML</span><span class="project-tag">Salesforce</span></div>
+</div>
+</a>
+<!-- McLabor - IT Automation -->
+<a href="mclabor.html" class="project-card group fade-up hover-trigger">
+<img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&q=80" alt="McLabor Automation" class="project-image" />
+<div class="project-overlay">
+<h3 class="project-title font-serif">McLabor</h3>
+<p class="project-desc">IT operations automation for workforce staffing solutions 🦅</p>
+<div class="project-tags"><span class="project-tag">Golang</span><span class="project-tag">Python</span><span class="project-tag">Automation</span></div>
+</div>
+</a></div>
+</section>
+<!-- Professional Experience -->
+<section id="experience" class="py-32 px-6">
+<div class="max-w-7xl mx-auto">">
+<div class="max-w-4xl mx-auto">
+<h2 class="section-title fade-up text-center">Professional Experience</h2>
+<div class="mt-16 space-y-2">
+<div class="experience-item fade-up hover-trigger">
+<div class="experience-title">CirculaHQ</div>
+<div class="experience-company">Sustainability Technology</div>
+<p class="experience-desc">Enabling a cleaner world through recycling — building inventory management and business operations software.</p>
+</div>
+<div class="experience-item fade-up hover-trigger">
+<div class="experience-title">HackNG</div>
+<div class="experience-company">Education Technology</div>
+<p class="experience-desc">Reshaping education in Nigeria through code — developing the Lena learning platform.</p>
+</div>
+<div class="experience-item fade-up hover-trigger">
+<div class="experience-title">AirGateway</div>
+<div class="experience-company">Travel Technology</div>
+<p class="experience-desc">Integrated APIs to enhance flight bookings — streamlining travel management with real-time data.</p>
+</div>
+<div class="experience-item fade-up hover-trigger">
+<div class="experience-title">Booking Ninjas</div>
+<div class="experience-company">Property Management</div>
+<p class="experience-desc">Revolutionized business operations with Golang and Salesforce tools — AI-powered property management.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Technical Skills -->
+<section id="skills" class="py-32 px-6">
+<div class="max-w-7xl mx-auto"> bg-charcoal/30">
+<div class="max-w-5xl mx-auto">
+<h2 class="section-title fade-up text-center">Technical Expertise</h2>
+<div class="grid md:grid-cols-2 gap-12 mt-16">
+<div class="fade-up">
+<h3 class="text-xl font-serif mb-6 text-gold">Languages & Frameworks</h3>
+<div class="flex flex-wrap">
+<span class="skill-tag hover-trigger">Golang</span>
+<span class="skill-tag hover-trigger">C</span>
+<span class="skill-tag hover-trigger">Python</span>
 
-        <!-- About Section -->
-        <section class="mb-20 max-w-3xl mx-auto">
-            <h2 class="text-2xl font-semibold text-gray-800 mb-4">About Me</h2>
-            <p class="text-gray-600 leading-relaxed mb-6">
-                Welcome to my corner of the internet, where code meets creativity! I'm Joshua, a seasoned software engineer with a passion for solving real-world problems through technology, education, and innovation.
-            </p>
-            
-            <div class="mb-8">
-                <h3 class="text-xl font-medium text-gray-800 mb-3">👨‍🎓 Education & Research</h3>
-                <ul class="list-disc pl-5 text-gray-600 space-y-2">
-                    <li>BSc in Computer Science from Obafemi Awolowo University (OAU)</li>
-                    <li>Research paper: "Multipipeline Sentiment Analysis for West African Pidgin" 🎤🇳🇬</li>
-                    <li>Certified in Data Analysis with Python (FreeCodeCamp) and Code Documentation (Linux Foundation)</li>
-                </ul>
-            </div>
-            
-            <div class="mb-8">
-                <h3 class="text-xl font-medium text-gray-800 mb-3">💼 Professional Experience</h3>
-                <ul class="list-disc pl-5 text-gray-600 space-y-2">
-                    <li><span class="font-medium">CirculaHQ</span> – Enabling a cleaner world through recycling!</li>
-                    <li><span class="font-medium">HackNG</span> – Reshaping education in Nigeria through code!</li>
-                    <li><span class="font-medium">AirGateway</span> – Integrated APIs to enhance flight bookings ✈️</li>
-                    <li><span class="font-medium">Booking Ninjas</span> – Revolutionized business operations with Golang, Salesforce tools 🧙‍♂️</li>
-                </ul>
-            </div>
-            
-            <div class="mb-8">
-                <h3 class="text-xl font-medium text-gray-800 mb-3">🛠️ Technical Skills</h3>
-                <div class="flex flex-wrap gap-3">
-                    <span class="px-3 py-1 bg-gray-200 rounded-full text-sm">Golang</span>
-                    <span class="px-3 py-1 bg-gray-200 rounded-full text-sm">Python</span>
-                    <span class="px-3 py-1 bg-gray-200 rounded-full text-sm">PHP</span>
-                    <span class="px-3 py-1 bg-gray-200 rounded-full text-sm">JavaScript</span>
-                    <span class="px-3 py-1 bg-gray-200 rounded-full text-sm">Unix</span>
-                    <span class="px-3 py-1 bg-gray-200 rounded-full text-sm">MySQL</span>
-                    <span class="px-3 py-1 bg-gray-200 rounded-full text-sm">AI/ML</span>
-                    <span class="px-3 py-1 bg-gray-200 rounded-full text-sm">Data Science</span>
-                </div>
-            </div>
-            
-            <div>
-                <h3 class="text-xl font-medium text-gray-800 mb-3">🎮 Beyond Coding</h3>
-                <p class="text-gray-600">
-                    I'm a researcher and enjoy volunteering in my free time. I also enjoy making music.
-                </p>
-            </div>
-        </section>
-
-        <!-- Portfolio Grid -->
-        <section id="projects">
-            <h2 class="text-2xl font-semibold text-gray-800 mb-8 text-center">Featured Projects</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Project 3 -->
-                <a href="lena.html" class="group">
-                    <div class="aspect-square overflow-hidden rounded-lg bg-gray-100">
-                        <img src="images/thumbnails/lena.avif" 
-                             alt="HackNG Platform" 
-                             class="w-full h-full object-cover transition duration-300 group-hover:scale-105">
-                    </div>
-                    <h3 class="mt-4 text-lg font-medium text-gray-800">Lena</h3>
-                    <p class="mt-1 text-gray-600">Educational software to manage learning and teaching</p>
-                </a>
-
-                <!-- Project 1 -->
-                <a href="circula.html" class="group">
-                    <div class="aspect-square overflow-hidden rounded-lg bg-gray-100">
-                        <img src="images/thumbnails/circula.png" 
-                             alt="Circula ScreenShot" 
-                             class="w-full h-full object-cover transition duration-300 group-hover:scale-105">
-                    </div>
-                    <h3 class="mt-4 text-lg font-medium text-gray-800">Circula</h3>
-                    <p class="mt-1 text-gray-600">Inventory Management and Business Operations software</p>
-                </a>
-
-                <!-- Project 4 -->
-                <a href="reccur.html" class="group">
-                    <div class="aspect-square overflow-hidden rounded-lg bg-gray-100">
-                        <img src="images/thumbnails/reccur.png" 
-                             alt="Database Management" 
-                             class="w-full h-full object-cover transition duration-300 group-hover:scale-105">
-                    </div>
-                    <h3 class="mt-4 text-lg font-medium text-gray-800">Reccur Payment</h3>
-                    <p class="mt-1 text-gray-600">Payment and Payroll Management System</p>
-                </a>
-
-                 <!-- Project 2 -->
-                 <a href="airgateway.html" class="group">
-                    <div class="aspect-square overflow-hidden rounded-lg bg-gray-100">
-                        <img src="images/thumbnails/airgateway.png" 
-                             alt="AirGateway API Integration" 
-                             class="w-full h-full object-cover transition duration-300 group-hover:scale-105">
-                    </div>
-                    <h3 class="mt-4 text-lg font-medium text-gray-800">AirGateway API Integration</h3>
-                    <p class="mt-1 text-gray-600">Flight Booking Management Software</p>
-                </a>
-
-                <!-- Project 5 -->
-                <a href="https://www.bookingninjas.com/" target="_blank" class="group">
-                    <div class="aspect-square overflow-hidden rounded-lg bg-gray-100">
-                        <img src="images/thumbnails/bookingninjas.png" 
-                             alt="Text Classification" 
-                             class="w-full h-full object-cover transition duration-300 group-hover:scale-105">
-                    </div>
-                    <h3 class="mt-4 text-lg font-medium text-gray-800">Booking Ninjas</h3>
-                    <p class="mt-1 text-gray-600">Property Management System</p>
-                </a>
-
-                <!-- Project 6 -->
-                <a href="#" class="group">
-                    <div class="aspect-square overflow-hidden rounded-lg bg-gray-100">
-                        <img src="images/thumbnails/antlar.png" 
-                             alt="Business Operations" 
-                             class="w-full h-full object-cover transition duration-300 group-hover:scale-105">
-                    </div>
-                    <h3 class="mt-4 text-lg font-medium text-gray-800">Antlar (Coming Soon)</h3>
-                    <p class="mt-1 text-gray-600">Compliance Management System</p>
-                </a>
-            </div>
-        </section>
-
-        <!-- Footer -->
-        <footer class="mt-20 pt-8 border-t border-gray-200 text-center">
-            <p class="text-gray-600 mb-4">🚀 Let's Build the Future Together!</p>
-            <p class="text-gray-600 mb-4">"If I can't solve a problem with code, it probably doesn't exist!" 😉</p>
-            <a href="mailto:jetimworks@gmail.com" class="text-gray-800 hover:text-gray-900 font-medium">jetimworks@gmail.com</a>
-            <div class="mt-4 flex justify-center space-x-6">
-                <a href="https://github.com/joshuaetim" class="text-gray-500 hover:text-gray-700" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-                <a href="https://www.linkedin.com/in/joshuaetim/" class="text-gray-500 hover:text-gray-700" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
-                <a href="https://x.com/theJoshuaEtim" class="text-gray-500 hover:text-gray-700" target="_blank"><i class="fab fa-twitter"></i> X</a>
-            </div>
-        </footer>
-    </div>
+<span class="skill-tag hover-trigger">JavaScript</span>
+<span class="skill-tag hover-trigger">HTML5/CSS3</span>
+<span class="skill-tag hover-trigger">Tailwind CSS</span>
+<span class="skill-tag hover-trigger">GSAP</span>
+</div>
+</div>
+<div class="fade-up" style="transition-delay: 0.1s">
+<h3 class="text-xl font-serif mb-6 text-gold">Systems & Tools</h3>
+<div class="flex flex-wrap">
+<span class="skill-tag hover-trigger">Unix/Linux</span>
+<span class="skill-tag hover-trigger">Postgres</span>
+<span class="skill-tag hover-trigger">RESTful APIs</span>
+<span class="skill-tag hover-trigger">Git</span>
+<span class="skill-tag hover-trigger">Docker</span>
+<span class="skill-tag hover-trigger">Salesforce</span>
+</div>
+</div>
+<div class="fade-up" style="transition-delay: 0.2s">
+<h3 class="text-xl font-serif mb-6 text-gold">AI & Data</h3>
+<div class="flex flex-wrap">
+<span class="skill-tag hover-trigger">AI/ML</span>
+<span class="skill-tag hover-trigger">Data Science</span>
+<span class="skill-tag hover-trigger">Text Classification</span>
+<span class="skill-tag hover-trigger">Predictive Analytics</span>
+</div>
+</div>
+<div class="fade-up" style="transition-delay: 0.3s">
+<h3 class="text-xl font-serif mb-6 text-gold">Beyond Code</h3>
+<div class="flex flex-wrap">
+<span class="skill-tag hover-trigger">Research</span>
+<span class="skill-tag hover-trigger">Volunteering</span>
+<span class="skill-tag hover-trigger">Music Production</span>
+<span class="skill-tag hover-trigger">UX Design</span>
+</div>
+</div>
+</div>
+<p class="text-center text-muted-grey mt-12 fade-up" style="transition-delay: 0.4s">
+I'm a researcher and enjoy volunteering in my free time. I also enjoy making music. 🎵
+</p>
+</div>
+</section>
+<!-- Contact -->
+<section id="contact" class="py-32 px-6">
+<div class="max-w-7xl mx-auto"> text-center">
+<div class="max-w-4xl mx-auto fade-up">
+<p class="text-muted-grey uppercase tracking-widest text-sm mb-6">Let's Build the Future Together</p>
+<h2 class="contact-cta mb-12">Have a project in mind?</h2>
+<a href="mailto:jetimworks@gmail.com" class="email-link hover-trigger">jetimworks@gmail.com</a>
+<div class="flex justify-center gap-4 mt-12 flex-wrap">
+<a href="https://github.com/joshuaetim" target="_blank" rel="noopener" class="social-link hover-trigger" aria-label="GitHub">
+<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+<span class="text-sm">GitHub</span>
+</a>
+<a href="https://www.linkedin.com/in/joshuaetim" target="_blank" rel="noopener" class="social-link hover-trigger" aria-label="LinkedIn">
+<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+<span class="text-sm">LinkedIn</span>
+</a>
+<a href="https://x.com/theJoshuaEtim" target="_blank" rel="noopener" class="social-link hover-trigger" aria-label="X">
+<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg>
+<span class="text-sm">X</span>
+</a>
+</div>
+</div>
+</section>
+<footer><p>&copy; <span id="year"></span> Joshua Etim. All rights reserved.</p></footer>
+</main>
+<!-- GSAP & Lenis -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/@studio-freight/lenis@1.0.29/dist/lenis.min.js"></script>
+<!-- External JavaScript -->
+<script src="main.js"></script>
 </body>
 </html>

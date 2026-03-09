@@ -1,97 +1,165 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reccur | Joshua Etim</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+ <meta charset="UTF-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+ <meta name="description" content="Reccur Payment - Payment and Payroll Management System"/>
+ <title>Reccur Payment | Joshua Etim</title>
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+ <script src="https://cdn.tailwindcss.com"></script>
+ <script>
+ tailwind.config = {
+ theme: {
+ extend: {
+ colors: {
+ obsidian: '#0a0a0a', charcoal: '#111111', 'off-white': '#f5f5f5',
+ 'muted-grey': '#a1a1a1', gold: '#d4af37', bronze: '#cd7f32'
+ },
+ fontFamily: { serif: ['Playfair Display', 'serif'], sans: ['Manrope', 'Inter', 'sans-serif'] }
+ }
+ }
+ }
+ </script>
+ <style>
+ *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+ body { background-color: #0a0a0a; color: #f5f5f5; font-family: 'Manrope', sans-serif; overflow-x: hidden; cursor: none; }
+ .grain-overlay {
+ position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 9999; opacity: 0.03;
+ background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iNDAwIj48ZmlsdGVyIGlkPSJub2lzZSI+PGZlVHVyYnVsZW5jZSB0eXBlPSJmcmFjdGFsTm9pc2UiIGJhc2VGcmVxdWVuY3k9IjAuOSIgbnVtT2N0YXZlcz0iMyIgc3RpdGNoVGlsZXM9InN0aXRjaCIvPjwvZmlsdGVyPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbHRlcj0idXJsKCNub2lzZSkiLz48L3N2Zz4=");
+ }
+ .cursor {
+ position: fixed; width: 20px; height: 20px; border: 1px solid #f5f5f5; border-radius: 50%;
+ pointer-events: none; transform: translate(-50%, -50%); transition: width 0.3s, height 0.3s;
+ z-index: 10000; mix-blend-mode: difference;
+ }
+ .cursor.hovered { width: 60px; height: 60px; background-color: rgba(212, 175, 55, 0.2); border-color: #d4af37; }
+ .cursor-dot {
+ position: fixed; width: 4px; height: 4px; background: #d4af37; border-radius: 50%;
+ pointer-events: none; transform: translate(-50%, -50%); z-index: 10001;
+ }
+ .nav-link { position: relative; padding: 0.5rem 0; transition: color 0.3s ease; }
+ .nav-link::after {
+ content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 1px;
+ background: #d4af37; transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+ }
+ .nav-link:hover::after { width: 100%; } .nav-link:hover { color: #d4af37; }
+ .project-hero { min-height: 60vh; display: flex; flex-direction: column; justify-content: center; padding: 2rem; position: relative; overflow: hidden; }
+ .display-text { font-size: clamp(2.5rem, 8vw, 6rem); letter-spacing: -0.03em; line-height: 1; font-family: 'Playfair Display', serif; }
+ .section-title { font-size: clamp(2rem, 5vw, 3.5rem); margin-bottom: 2rem; font-family: 'Playfair Display', serif; }
+ .project-image { width: 100%; height: auto; border-radius: 4px; border: 1px solid rgba(255,255,255,0.1); }
+ .tech-tag {
+ padding: 0.5rem 1.25rem; border: 1px solid rgba(212,175,55,0.4); border-radius: 9999px;
+ font-size: 0.875rem; color: #d4af37; background: rgba(212,175,55,0.05); display: inline-block; margin: 0.25rem;
+ }
+ .back-link {
+ display: inline-flex; align-items: center; gap: 0.75rem; padding: 1rem 2rem;
+ border: 1px solid rgba(255,255,255,0.2); border-radius: 9999px; transition: all 0.3s ease;
+ text-decoration: none; color: #f5f5f5; font-size: 0.875rem; letter-spacing: 0.1em; text-transform: uppercase;
+ }
+ .back-link:hover { border-color: #d4af37; background: rgba(212,175,55,0.05); transform: translateY(-2px); }
+ .feature-item { padding: 1.5rem 0; border-bottom: 1px solid rgba(255,255,255,0.08); }
+ footer { padding: 3rem 2rem; border-top: 1px solid rgba(255,255,255,0.08); text-align: center; color: #a1a1a1; font-size: 0.875rem; margin-top: 6rem; }
+ @media (max-width: 768px) { .cursor, .cursor-dot { display: none !important; } body { cursor: auto !important; } }
+ .fade-up { opacity: 0; transform: translateY(40px); transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
+ .fade-up.visible { opacity: 1; transform: translateY(0); }
+ </style>
 </head>
-<body class="bg-gray-50">
-    <div class="max-w-4xl mx-auto px-4 py-12">
-        <!-- Back button -->
-        <a href="index.html" class="inline-flex items-center text-gray-600 hover:text-gray-900 mb-8">
-            <i class="fas fa-arrow-left mr-2"></i> Back to Portfolio
-        </a>
+<body>
+ <div class="grain-overlay"></div>
+ <div class="cursor" id="cursor"></div>
+ <div class="cursor-dot" id="cursor-dot"></div>
+ 
+ <nav class="fixed top-0 left-0 right-0 z-50 px-6 py-4 flex justify-between items-center backdrop-blur-sm bg-obsidian/80">
+ <a href="index.html" class="text-2xl font-serif tracking-widest hover-trigger">JE.</a>
+ <div class="flex gap-8">
+ <a href="index.html#work" class="nav-link text-sm uppercase tracking-widest hover-trigger">Work</a>
+ <a href="index.html#about" class="nav-link text-sm uppercase tracking-widest hover-trigger">About</a>
+ <a href="index.html#contact" class="nav-link text-sm uppercase tracking-widest hover-trigger">Contact</a>
+ </div>
+ </nav>
 
-        <!-- Project Header -->
-        <header class="mb-12">
-            <h1 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Reccur: Virtual Account and Payment System</h1>
-            <div class="flex flex-wrap gap-3 mb-6">
-                <span class="px-3 py-1 bg-red-100 text-black-800 rounded-full text-sm">Finance</span>
-                <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">Payment</span>
-                <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm">Crypto</span>
-                <span class="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-sm">Fintech</span>
-                <span class="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-sm">Monitoring</span>
-            </div>
-            <div class="aspect-w-16 aspect-h-9 rounded-xl overflow-hidden bg-gray-200">
-                <a href="https://www.reccur.co/" target="_blank">
-                    <img src="images/projects/reccur.png" 
-                         alt="Reccur Visualization" 
-                         class="w-full h-full object-cover">
-                </a>
-            </div>
-        </header>
+ <main class="pt-24">
+ <section class="project-hero">
+ <div class="max-w-7xl mx-auto w-full">
+ <p class="text-gold uppercase tracking-widest text-sm mb-4 fade-up">Database Management</p>
+ <h1 class="display-text mb-6 fade-up">Reccur Payment</h1>
+ <p class="text-xl md:text-2xl text-muted-grey max-w-3xl fade-up">Payment and Payroll Management System</p>
+ </div>
+ </section>
 
-        <!-- Project Details -->
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            <div class="lg:col-span-2">
-                <!-- Project Description -->
-                <section class="mb-12">
-                    <h2 class="text-2xl font-semibold text-gray-800 mb-4">About This Project</h2>
-                    <div class="prose max-w-none text-gray-600">
-                        <p class="mb-4">
-                            Reccur creates virtual accounts for customers and helps them receive payments and disburse payments to their beneficiaries. Currently focused on Africa, they plan to expand and cover a larger base. The Reccur platform is  built with speed, efficiency and flexibility for the user. It aims to be a one-stop shop for payments across international borders. Visit their <a href="https://www.reccur.co/" class="text-blue-600 hover:text-blue-400">website</a> to learn more.</p>
-                    </div>
-                </section>
-            </div>
+ <section class="py-24 px-6">
+ <div class="max-w-7xl mx-auto">
+ <div class="mb-16 fade-up">
+ <img src="https://joshuaetim.github.io/images/thumbnails/reccur.png" alt="Reccur Payment Platform" class="project-image"/>
+ </div>
+ 
+ <div class="grid md:grid-cols-2 gap-16">
+ <div class="fade-up">
+ <h2 class="section-title">Overview</h2>
+ <p class="text-lg text-muted-grey leading-relaxed mb-6">
+ Reccur Payment is a sophisticated payment and payroll management system designed to streamline financial operations. This comprehensive platform handles complex payment processing, payroll automation, and financial data management with precision and security.
+ </p>
+ <p class="text-lg text-muted-grey leading-relaxed">
+ The system provides robust database management capabilities, ensuring accurate transaction records, seamless payroll processing, and comprehensive financial reporting for businesses of all sizes.
+ </p>
+ </div>
+ 
+ <div class="fade-up">
+ <h3 class="text-2xl font-serif mb-6">Key Features</h3>
+ <div class="space-y-4">
+ <div class="feature-item">
+ <h4 class="text-gold mb-2">Payment Processing</h4>
+ <p class="text-muted-grey">Secure and efficient payment processing with multiple gateway integrations.</p>
+ </div>
+ <div class="feature-item">
+ <h4 class="text-gold mb-2">Payroll Management</h4>
+ <p class="text-muted-grey">Automated payroll calculations, tax compliance, and employee payment scheduling.</p>
+ </div>
+ <div class="feature-item">
+ <h4 class="text-gold mb-2">Database Management</h4>
+ <p class="text-muted-grey">Advanced MySQL database architecture for reliable data storage and retrieval.</p>
+ </div>
+ </div>
+ </div>
+ </div>
 
-            <!-- Sidebar -->
-            <div class="lg:col-span-1">
-                <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200 sticky top-8">
-                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Project Details</h3>
-                    
-                    <div class="mb-6">
-                        <h4 class="font-medium text-gray-700 mb-2">Timeline</h4>
-                        <p class="text-gray-600">2025</p>
-                    </div>
-                    
-                    <div class="mb-6">
-                        <div class="flex flex-wrap gap-2">
-                            <span class="px-2 py-1 bg-gray-100 text-gray-800 rounded text-xs">API Integration</span>
-                            <span class="px-2 py-1 bg-gray-100 text-gray-800 rounded text-xs">Blockchain</span>
-                            <span class="px-2 py-1 bg-gray-100 text-gray-800 rounded text-xs">Database management</span>
-                            <span class="px-2 py-1 bg-gray-100 text-gray-800 rounded text-xs">Software Programming</span>
-                            <span class="px-2 py-1 bg-gray-100 text-gray-800 rounded text-xs">Payment systems</span>
-                        </div>
-                    </div>
-                    
-                    <div class="mb-6">
-                        <h4 class="font-medium text-gray-700 mb-2">Website Link</h4>
-                        <div class="space-y-2">
-                            <a href="https://www.reccur.co/" target="_blank" class="flex items-center text-blue-600 hover:text-blue-800">
-                                <i class="fas fa-external-link-alt mr-2"></i> Reccur Homepage
-                            </a>
-                        </div>
-                    </div>
-                    
-                    <div>
-                        <h4 class="font-medium text-gray-700 mb-2">Acknowledgements and References</h4>
-                        <p class="text-gray-600 text-sm">
-                            The awesome team behind the Reccur project can be reached out to via the <a href="https://www.reccur.co/" class="text-blue-600 hover:text-blue-800">Reccur website</a>.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
+ <div class="mt-24 fade-up">
+ <h3 class="text-2xl font-serif mb-8">Technology Stack</h3>
+ <div class="flex flex-wrap">
+ <span class="tech-tag">Postgres</span>
+ 
+ <span class="tech-tag">JavaScript</span>
+ <span class="tech-tag">Python</span>
+ <span class="tech-tag">RESTful APIs</span>
+ <span class="tech-tag">Unix</span>
+ </div>
+ </div>
 
-        <!-- Call to Action -->
-        <section class="mt-16 text-center">
-            <h2 class="text-2xl font-semibold text-gray-800 mb-4">Want to see more of my work?</h2>
-            <a href="index.html#projects" class="inline-block bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg transition">
-                View Full Portfolio
-            </a>
-        </section>
-    </div>
+ <div class="mt-16 fade-up">
+ <a href="index.html" class="back-link hover-trigger">
+ <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+ Back to Portfolio
+ </a>
+ </div>
+ </div>
+ </section>
+
+ <footer><p>&copy; <span id="year"></span> Joshua Etim. All rights reserved.</p></footer>
+ </main>
+
+ <script>
+ document.getElementById('year').textContent = new Date().getFullYear();
+ const cursor = document.getElementById('cursor'), cursorDot = document.getElementById('cursor-dot');
+ const hoverTriggers = document.querySelectorAll('.hover-trigger');
+ let mX=0, mY=0, cX=0, cY=0;
+ document.addEventListener('mousemove', e => { mX=e.clientX; mY=e.clientY; cursorDot.style.left=mX+'px'; cursorDot.style.top=mY+'px'; });
+ function animateCursor() { cX+=(mX-cX)*0.15; cY+=(mY-cY)*0.15; cursor.style.left=cX+'px'; cursor.style.top=cY+'px'; requestAnimationFrame(animateCursor); }
+ animateCursor();
+ hoverTriggers.forEach(el => { el.addEventListener('mouseenter',()=>cursor.classList.add('hovered')); el.addEventListener('mouseleave',()=>cursor.classList.remove('hovered')); });
+ const observer = new IntersectionObserver(entries => { entries.forEach(entry => { if(entry.isIntersecting) entry.target.classList.add('visible'); }); }, { threshold: 0.1 });
+ document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+ </script>
 </body>
 </html>

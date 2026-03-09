@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="McLabor - IT Operations Automation Software"/>
+<title>McLabor | Joshua Etim</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+theme: {
+extend: {
+colors: {
+obsidian: '#0a0a0a', charcoal: '#111111', 'off-white': '#f5f5f5',
+'muted-grey': '#a1a1a1', gold: '#d4af37', bronze: '#cd7f32'
+},
+fontFamily: { serif: ['Playfair Display', 'serif'], sans: ['Manrope', 'Inter', 'sans-serif'] }
+}
+}
+}
+</script>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="grain-overlay"></div>
+<div class="cursor" id="cursor"></div>
+<div class="cursor-dot" id="cursor-dot"></div>
+<nav class="fixed top-0 left-0 right-0 z-50 px-6 py-4 flex justify-between items-center backdrop-blur-sm bg-obsidian/80">
+<a href="index.html" class="text-2xl font-serif tracking-widest hover-trigger">JE.</a>
+<div class="flex gap-8">
+<a href="index.html#work" class="nav-link text-sm uppercase tracking-widest hover-trigger">Work</a>
+<a href="index.html#about" class="nav-link text-sm uppercase tracking-widest hover-trigger">About</a>
+<a href="index.html#contact" class="nav-link text-sm uppercase tracking-widest hover-trigger">Contact</a>
+</div>
+</nav>
+<main class="pt-24">
+<section class="project-hero">
+<div class="max-w-7xl mx-auto w-full">
+<p class="text-gold uppercase tracking-widest text-sm mb-4 fade-up">IT Operations Automation</p>
+<h1 class="display-text mb-6 fade-up">McLabor</h1>
+<p class="text-xl md:text-2xl text-muted-grey max-w-3xl fade-up">IT Operations Automation Software for workforce staffing solutions 🦅</p>
+</div>
+</section>
+<section class="py-24 px-6">
+<div class="max-w-7xl mx-auto">
+<div class="mb-16 fade-up">
+<img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1200&q=80" alt="McLabor Automation Platform" class="project-image"/>
+</div>
+<div class="grid md:grid-cols-2 gap-16">
+<div class="fade-up">
+<h2 class="section-title">Overview</h2>
+<p class="text-lg text-muted-grey leading-relaxed mb-6">
+McLabor Sources, Inc. is a leading workforce staffing company founded in 2003, specializing in construction, light industrial, and manufacturing sectors. To streamline their day-to-day IT operations, I developed comprehensive automation software that handles critical business processes.
+</p>
+<p class="text-lg text-muted-grey leading-relaxed">
+The automation system reduces manual workload, improves operational efficiency, and ensures consistent IT service delivery across their staffing operations in the Northeast region.
+</p>
+</div>
+<div class="fade-up">
+<h3 class="text-2xl font-serif mb-6">Key Features</h3>
+<div class="space-y-4">
+<div class="feature-item">
+<h4 class="text-gold mb-2">IT Operations Automation</h4>
+<p class="text-muted-grey">Automated routine IT tasks and workflows to reduce manual intervention and improve efficiency.</p>
+</div>
+<div class="feature-item">
+<h4 class="text-gold mb-2">Process Management</h4>
+<p class="text-muted-grey">Streamlined day-to-day operational processes for payroll, staffing, and agency management.</p>
+</div>
+<div class="feature-item">
+<h4 class="text-gold mb-2">System Integration</h4>
+<p class="text-muted-grey">Integrated multiple systems to ensure seamless data flow and operational continuity.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-24 fade-up">
+<h3 class="text-2xl font-serif mb-8">Technology Stack</h3>
+<div class="flex flex-wrap">
+<span class="tech-tag">Golang</span>
+<span class="tech-tag">Python</span>
+<span class="tech-tag">Postgres</span>
+<span class="tech-tag">JavaScript</span>
+<span class="tech-tag">Unix/Linux</span>
+<span class="tech-tag">Docker</span>
+<span class="tech-tag">RESTful APIs</span>
+</div>
+</div>
+<div class="mt-16 fade-up">
+<a href="index.html" class="back-link hover-trigger">
+<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+Back to Portfolio
+</a>
+</div>
+</div>
+</section>
+<footer><p>&copy; <span id="year"></span> Joshua Etim. All rights reserved.</p></footer>
+</main>
+<script src="main.js"></script>
+</body>
+</html>

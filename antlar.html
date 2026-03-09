@@ -3,8 +3,8 @@
 <head>
  <meta charset="UTF-8" />
  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
- <meta name="description" content="Lena - Educational software to manage learning and teaching at HackNG"/>
- <title>Lena | HackNG - Joshua Etim</title>
+ <meta name="description" content="Antlar - Compliance Management System (Coming Soon)"/>
+ <title>Antlar | Coming Soon - Joshua Etim</title>
  <link rel="preconnect" href="https://fonts.googleapis.com">
  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
@@ -48,7 +48,6 @@
  .project-hero { min-height: 60vh; display: flex; flex-direction: column; justify-content: center; padding: 2rem; position: relative; overflow: hidden; }
  .display-text { font-size: clamp(2.5rem, 8vw, 6rem); letter-spacing: -0.03em; line-height: 1; font-family: 'Playfair Display', serif; }
  .section-title { font-size: clamp(2rem, 5vw, 3.5rem); margin-bottom: 2rem; font-family: 'Playfair Display', serif; }
- .project-image { width: 100%; height: auto; border-radius: 4px; border: 1px solid rgba(255,255,255,0.1); }
  .tech-tag {
  padding: 0.5rem 1.25rem; border: 1px solid rgba(212,175,55,0.4); border-radius: 9999px;
  font-size: 0.875rem; color: #d4af37; background: rgba(212,175,55,0.05); display: inline-block; margin: 0.25rem;
@@ -59,7 +58,11 @@
  text-decoration: none; color: #f5f5f5; font-size: 0.875rem; letter-spacing: 0.1em; text-transform: uppercase;
  }
  .back-link:hover { border-color: #d4af37; background: rgba(212,175,55,0.05); transform: translateY(-2px); }
- .feature-item { padding: 1.5rem 0; border-bottom: 1px solid rgba(255,255,255,0.08); }
+ .coming-badge {
+ display: inline-block; padding: 0.5rem 1.5rem; border: 1px solid #d4af37;
+ border-radius: 9999px; color: #d4af37; font-size: 0.875rem; letter-spacing: 0.1em;
+ text-transform: uppercase; margin-bottom: 2rem;
+ }
  footer { padding: 3rem 2rem; border-top: 1px solid rgba(255,255,255,0.08); text-align: center; color: #a1a1a1; font-size: 0.875rem; margin-top: 6rem; }
  @media (max-width: 768px) { .cursor, .cursor-dot { display: none !important; } body { cursor: auto !important; } }
  .fade-up { opacity: 0; transform: translateY(40px); transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
@@ -83,61 +86,54 @@
  <main class="pt-24">
  <section class="project-hero">
  <div class="max-w-7xl mx-auto w-full">
- <p class="text-gold uppercase tracking-widest text-sm mb-4 fade-up">HackNG Platform</p>
- <h1 class="display-text mb-6 fade-up">Lena</h1>
- <p class="text-xl md:text-2xl text-muted-grey max-w-3xl fade-up">Educational software reshaping learning and teaching in Nigeria</p>
+ <span class="coming-badge fade-up">Coming Soon</span>
+ <h1 class="display-text mb-6 fade-up">Antlar</h1>
+ <p class="text-xl md:text-2xl text-muted-grey max-w-3xl fade-up">Compliance Management System - Revolutionizing business compliance and operations</p>
  </div>
  </section>
 
  <section class="py-24 px-6">
- <div class="max-w-7xl mx-auto">
- <div class="mb-16 fade-up">
- <img src="https://joshuaetim.github.io/images/thumbnails/lena.avif" alt="Lena Platform" class="project-image"/>
- </div>
- 
- <div class="grid md:grid-cols-2 gap-16">
- <div class="fade-up">
- <h2 class="section-title">Overview</h2>
- <p class="text-lg text-muted-grey leading-relaxed mb-6">
- Lena is an innovative educational platform developed for HackNG, designed to reshape education in Nigeria through code. This comprehensive software manages both learning and teaching workflows, providing a seamless digital experience for educators and students.
+ <div class="max-w-4xl mx-auto text-center">
+ <div class="fade-up mb-16">
+ <p class="text-lg text-muted-grey leading-relaxed mb-8">
+ Antlar is an innovative compliance management system currently in development. This cutting-edge platform will provide comprehensive solutions for business compliance, regulatory management, and operational excellence.
  </p>
  <p class="text-lg text-muted-grey leading-relaxed">
- The platform addresses critical challenges in educational management, offering intuitive tools for course delivery, student engagement, and performance tracking.
+ Built with modern technologies and designed to streamline complex compliance workflows, Antlar will help businesses maintain regulatory standards while optimizing their operations.
  </p>
  </div>
- 
+
+ <div class="fade-up mb-16">
+ <h3 class="text-2xl font-serif mb-8">Planned Features</h3>
+ <div class="grid md:grid-cols-3 gap-8 text-left">
+ <div class="p-6 border border-white/10 rounded-sm">
+ <h4 class="text-gold mb-3 text-lg">Compliance Tracking</h4>
+ <p class="text-muted-grey text-sm">Automated compliance monitoring and regulatory requirement management.</p>
+ </div>
+ <div class="p-6 border border-white/10 rounded-sm">
+ <h4 class="text-gold mb-3 text-lg">Business Operations</h4>
+ <p class="text-muted-grey text-sm">Streamlined workflows for operational efficiency and compliance.</p>
+ </div>
+ <div class="p-6 border border-white/10 rounded-sm">
+ <h4 class="text-gold mb-3 text-lg">Analytics & Reporting</h4>
+ <p class="text-muted-grey text-sm">Comprehensive insights into compliance status and business metrics.</p>
+ </div>
+ </div>
+ </div>
+
  <div class="fade-up">
- <h3 class="text-2xl font-serif mb-6">Key Features</h3>
- <div class="space-y-4">
- <div class="feature-item">
- <h4 class="text-gold mb-2">Learning Management</h4>
- <p class="text-muted-grey">Comprehensive tools for course creation, content delivery, and student progress tracking.</p>
- </div>
- <div class="feature-item">
- <h4 class="text-gold mb-2">Teaching Tools</h4>
- <p class="text-muted-grey">Advanced features for educators to manage classes, assignments, and assessments.</p>
- </div>
- <div class="feature-item">
- <h4 class="text-gold mb-2">Student Engagement</h4>
- <p class="text-muted-grey">Interactive features to enhance student participation and learning outcomes.</p>
- </div>
- </div>
+ <h3 class="text-2xl font-serif mb-8">Technology Stack</h3>
+ <div class="flex flex-wrap justify-center">
+ <span class="tech-tag">Golang</span>
+ <span class="tech-tag">Python</span>
+ <span class="tech-tag">JavaScript</span>
+ <span class="tech-tag">AI/ML</span>
+ <span class="tech-tag">Postgres</span>
+ <span class="tech-tag">Data Science</span>
  </div>
  </div>
 
  <div class="mt-24 fade-up">
- <h3 class="text-2xl font-serif mb-8">Technology Stack</h3>
- <div class="flex flex-wrap">
- <span class="tech-tag">JavaScript</span>
- <span class="tech-tag">Python</span>
- <span class="tech-tag">Postgres</span>
- 
- <span class="tech-tag">HTML5/CSS3</span>
- <span class="tech-tag">RESTful APIs</span>
- </div>
- </div>
-
- <div class="mt-16 fade-up">
  <a href="index.html" class="back-link hover-trigger">
  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
  Back to Portfolio
