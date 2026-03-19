@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js scroll-smooth">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="Multi-Pipeline Sentiment Analysis for West-African Pigin - Research Project"/>
+<title>Multi-Pipeline Sentiment Analysis for West-African Pigin | Joshua Etim</title>
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+theme: {
+extend: {
+colors: {
+obsidian: '#0a0a0a', charcoal: '#111111', 'off-white': '#f5f5f5',
+'muted-grey': '#a1a1a1', gold: '#d4af37', bronze: '#cd7f32'
+},
+fontFamily: { serif: ['Playfair Display', 'serif'], sans: ['Manrope', 'Inter', 'sans-serif'] },
+animation: { 'marquee': 'marquee 25s linear infinite', 'float': 'float 6s ease-in-out infinite' },
+keyframes: {
+marquee: { '0%': { transform: 'translateX(0)' }, '100%': { transform: 'translateX(-50%)' } },
+float: { '0%, 100%': { transform: 'translateY(0)' }, '50%': { transform: 'translateY(-20px)' } }
+}
+}
+}
+}
+</script>
+<!-- External Styles -->
+<link rel="stylesheet" href="styles.css">
+</head>
+<body class="antialiased">
+<div class="grain-overlay"></div><div class="cursor" id="cursor"></div><div class="cursor-dot" id="cursor-dot"></div>
+<div class="preloader" id="preloader"><div class="preloader-text"><span>J</span><span>o</span><span>s</span><span>h</span><span>u</span><span>a</span><span style="margin: 0 1vw;">•</span><span>E</span><span>t</span><span>i</span><span>m</span></div></div>
+<main data-scroll-container>
+<!-- Navigation -->
+<nav class="fixed top-0 left-0 right-0 z-50 px-6 py-4 flex justify-between items-center backdrop-blur-sm bg-obsidian/80">
+<a href="index.html" class="text-2xl font-serif tracking-widest hover-trigger" aria-label="Home">JE.</a>
+<div class="nav-desktop flex gap-8">
+<a href="index.html#work" class="nav-link text-sm uppercase tracking-widest hover-trigger">Work</a>
+<a href="index.html#research" class="nav-link text-sm uppercase tracking-widest hover-trigger">Research</a>
+<a href="index.html#skills" class="nav-link text-sm uppercase tracking-widest hover-trigger">Skills</a>
+<a href="index.html#contact" class="nav-link text-sm uppercase tracking-widest hover-trigger">Contact</a>
+</div>
+<button class="nav-mobile p-2 hover-trigger" id="menuToggle" aria-label="Toggle menu">
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+</button>
+</nav>
+<!-- Mobile Menu -->
+<div id="mobileMenu" class="fixed inset-0 z-40 bg-obsidian flex flex-col items-center justify-center gap-8 transform translate-x-full transition-transform duration-500">
+<button id="menuClose" class="absolute top-6 right-6 p-2 hover-trigger" aria-label="Close menu">
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+</button>
+<a href="index.html#work" class="text-3xl font-serif hover-trigger mobile-link">Work</a>
+<a href="index.html#research" class="text-3xl font-serif hover-trigger mobile-link">Research</a>
+<a href="index.html#skills" class="text-3xl font-serif hover-trigger mobile-link">Skills</a>
+<a href="index.html#contact" class="text-3xl font-serif hover-trigger mobile-link">Contact</a>
+</div>
+<!-- Project Hero -->
+<section class="hero" id="hero">
+<div class="relative z-10 max-w-7xl mx-auto w-full">
+<div class="relative z-10 max-w-7xl mx-auto w-full">
+<p class="text-muted-grey uppercase tracking-widest text-sm mb-4 fade-in">Research Project</p>
+<h1 class="display-text mb-6 fade-up">Multi-Pipeline Sentiment Analysis</h1>
+<p class="text-xl md:text-2xl text-muted-grey max-w-3xl fade-up" style="transition-delay: 0.2s">
+West-African Pidgin language processing and analysis with advanced machine learning techniques.
+</p>
+<div class="quote-block fade-up text-center" style="transition-delay: 0.4s">
+Improving accuracy and relevance of sentiment analysis for underrepresented languages
+</div>
+</div>
+</div>
+<a href="#project-details" class="scroll-indicator hover-trigger" aria-label="Scroll to content"><span>Explore</span><div class="scroll-line"></div></a>
+</section>
+<!-- Project Details -->
+<section id="project-details" class="py-32 px-6">
+<div class="max-w-7xl mx-auto">
+<div class="grid md:grid-cols-2 gap-16 items-center">
+<div>
+<img src="images/projects/research.png" alt="Multi-Pipeline Sentiment Analysis" class="w-full h-auto rounded-lg shadow-2xl" />
+</div>
+<div>
+<h2 class="section-title mb-8">Project Overview</h2>
+<p class="text-lg text-muted-grey mb-8">
+This research introduces a multi-pipeline approach to Sentiment Analysis, focusing on improving the accuracy and relevance of results for West-African pidgin language. Existing approaches to sentiment analysis of West-African pidgin have been fragmented, often training a new model with pidgin data, and focusing on general sentiment polarity.
+</p>
+<div class="project-tags mb-8">
+<span class="project-tag">Python</span>
+<span class="project-tag">NLP</span>
+<span class="project-tag">Machine Learning</span>
+<span class="project-tag">XLM-R</span>
+<span class="project-tag">AfriBerta</span>
+<span class="project-tag">Logistic Regression</span>
+</div>
+<div class="mt-8">
+<h3 class="text-xl font-serif mb-4 text-gold">Key Achievements</h3>
+<ul class="text-muted-grey space-y-2">
+<li>• Developed a holistic multi-pipeline system for exhaustive polarity analysis</li>
+<li>• Achieved F1-score of 74.5% with AfriBerta model (average over 5 runs)</li>
+<li>• Subject classifier achieved 81% accuracy in identifying relevant text</li>
+<li>• Integrated cross-lingual model with Roberta (XLM-R) using transfer learning</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Research Details -->
+<section class="py-32 px-6 bg-charcoal/30">
+<div class="max-w-7xl mx-auto">
+<h2 class="section-title mb-12">Research Methodology</h2>
+<div class="space-y-12">
+<div class="fade-up">
+<h3 class="text-2xl font-serif mb-6 text-gold">Multi-Pipeline Architecture</h3>
+<p class="text-muted-grey text-lg leading-relaxed">
+The system employs a two-stage approach: first, a subject classifier determines if the text is relevant to the target subject matter using Logistic Regression. Then, for relevant texts, a fine-tuned XLM-R model performs sentiment analysis. This approach significantly improves both accuracy and computational efficiency by filtering out irrelevant content before detailed analysis.
+</p>
+</div>
+<div class="fade-up" style="transition-delay: 0.1s">
+<h3 class="text-2xl font-serif mb-6 text-gold">Data Collection and Processing</h3>
+<p class="text-muted-grey text-lg leading-relaxed">
+Twitter data was collected and processed into tokens for training and evaluation. The dataset was carefully curated to represent the linguistic diversity of West-African pidgin, ensuring the model's robustness across different regional variations and usage patterns.
+</p>
+</div>
+<div class="fade-up" style="transition-delay: 0.2s">
+<h3 class="text-2xl font-serif mb-6 text-gold">Model Development</h3>
+<p class="text-muted-grey text-lg leading-relaxed">
+The sentiment analysis component uses a cross-lingual model with Roberta (XLM-R) that was fine-tuned and expanded through transfer learning in the AfriBerta model. This approach leverages pre-trained multilingual representations while adapting to the specific characteristics of West-African pidgin.
+</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Authors and Affiliations -->
+<section class="py-32 px-6">
+<div class="max-w-7xl mx-auto">
+<h2 class="section-title mb-12">Authors</h2>
+<div class="grid md:grid-cols-2 gap-8">
+<div class="bg-charcoal/50 p-8 rounded-lg">
+<h3 class="text-xl font-serif mb-4 text-gold">Primary Authors</h3>
+<ul class="text-muted-grey space-y-3">
+<li>• <strong>Segun Aina</strong></li>
+<li>• <strong>Joshua Etim</strong></li>
+<li>• <strong>Seun Ayeni</strong></li>
+<li>• <strong>Aderonke Lawal</strong></li>
+<li>• <strong>Oluwatoyin Odukoya</strong></li>
+</ul>
+</div>
+<div class="bg-charcoal/50 p-8 rounded-lg">
+<h3 class="text-xl font-serif mb-4 text-gold">Affiliation</h3>
+<p class="text-muted-grey">
+<strong>Omolara Ogungbe</strong><br>
+Obafemi Awolowo University<br>
+Department of Computer Science
+</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Back to Research -->
+<section class="py-32 px-6">
+<div class="max-w-7xl mx-auto text-center">
+<h2 class="section-title mb-8">Explore More Research</h2>
+<p class="text-muted-grey mb-12 max-w-3xl mx-auto">
+Discover more of my research projects exploring cutting-edge technologies and methodologies in computer science and software engineering.
+</p>
+<a href="index.html#research" class="back-link hover-trigger">← Back to Research Projects</a>
+</div>
+</section>
+<!-- Contact -->
+<section id="contact" class="py-32 px-6">
+<div class="max-w-4xl mx-auto text-center">
+<div class="max-w-4xl mx-auto fade-up">
+<p class="text-muted-grey uppercase tracking-widest text-sm mb-6">Let's Build the Future Together</p>
+<h2 class="contact-cta mb-12 text-center">Have a project in mind?</h2>
+<a href="mailto:jetimworks@gmail.com" class="email-link hover-trigger">jetimworks@gmail.com</a>
+<div class="flex justify-center gap-4 mt-12 flex-wrap">
+<a href="https://github.com/joshuaetim" target="_blank" rel="noopener" class="social-link hover-trigger" aria-label="GitHub">
+<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+<span class="text-sm">GitHub</span>
+</a>
+<a href="https://www.linkedin.com/in/joshuaetim" target="_blank" rel="noopener" class="social-link hover-trigger" aria-label="LinkedIn">
+<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+<span class="text-sm">LinkedIn</span>
+</a>
+<a href="https://x.com/theJoshuaEtim" target="_blank" rel="noopener" class="social-link hover-trigger" aria-label="X">
+<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg>
+<span class="text-sm">X</span>
+</a>
+</div>
+</div>
+</section>
+<footer><p>&copy; <span id="year"></span> Joshua Etim. All rights reserved.</p></footer>
+</main>
+<!-- GSAP & Lenis -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/@studio-freight/lenis@1.0.29/dist/lenis.min.js"></script>
+<!-- External JavaScript -->
+<script src="main.js"></script>
+</body>
+</html>
