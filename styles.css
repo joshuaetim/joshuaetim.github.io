@@ -26,6 +26,42 @@ body {
     border-radius: 50%; pointer-events: none; transform: translate(-50%, -50%); z-index: 10001;
 }
 
+/* Ensure links are clickable despite custom cursor */
+.project-image-container a {
+    pointer-events: auto;
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 10;
+}
+
+.project-image-link {
+    pointer-events: auto;
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 10;
+}
+
+/* Ensure image overlay doesn't block links */
+.image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(10,10,10,0.8), rgba(10,10,10,0.2));
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    display: flex;
+    align-items: flex-end;
+    padding: 3rem;
+    pointer-events: none; /* Don't block clicks */
+    z-index: 5;
+}
+
 /* Preloader */
 .preloader {
     position: fixed; top: 0; left: 0; width: 100%; height: 100%;
